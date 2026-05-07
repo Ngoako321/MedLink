@@ -8,11 +8,7 @@ const Navbar1 = () => {
             <div className="flex justify-between">
                 
                 <div className="flex gap-3 items-center cursor-pointer">
-                    <img 
-                        src={medlinkLogo} 
-                        alt="MedLinkLogo" 
-                        className='w-9 h-9' 
-    />
+                    <img src={medlinkLogo} alt="MedLinkLogo" className='w-9 h-9' />
 
                     <h3 className="text-blue-800 font-bold text-3xl">
                         MedLink
