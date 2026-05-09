@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SignUp = () => {
     return (
         <div className='w-full flex flex-col items-center justify-center'>
-            <div className='text-4xl mb-5'>Make the most of your professional life</div>
-            <div className='w-[85%] md:-[28%] shadow-xl rounded-sm box p-10'>
+            <div className=' text-4xl mb-5 text-center px-4'>Make the most of your professional life</div>
+            <div className='w-[85%] md:w-[28%] shadow-xl rounded-sm box p-10'>
                 <div className='flex flex-col gap-4'>
                     <div>
                         <label htmlFor="email">Email</label>
@@ -25,13 +26,13 @@ const SignUp = () => {
                 </div>
 
                 <div className='flex items-center gap-2'>
-                    <div className='border-b-1 border-gray-400 w-[45%] '/> <div>or</div> <div className='border-b-1 border-gray-400 w-[45%] my-6'/>
+                    <div className='border-b border-gray-400 w-[45%] '/> <div>or</div> <div className='border-b-1 border-gray-400 w-[45%] my-6'/>
                 </div>
 
                 <div>Google Login Btn </div>
             </div>
             
-            <div className='mt-4 mb-10'>Already on Medlink? <span className='text-blue-800 cursor-pointer'>Sign in</span> </div>
+            <div className='mt-4 mb-10'>Already on Medlink? <Link to={'/login'} className='text-blue-800 cursor-pointer'>Sign in</Link></div>
         </div>
     )
 }

@@ -22,7 +22,7 @@ const Navbar1 = () => {
             <div className='flex md:gap-4 gap-2 justify-center items-center'>
 
                 <Link to={'/signUp'} className='md:px-4 md:py-2 px-3 py-2 text-black rounded-3xl text-xl hover:bg-gray-200 cursor-pointer'>Join</Link>
-                <div className='px-4 py-2 border text-blue-800 border-blue-800 rounded-3xl text-xl hover:bg-blue-50 cursor-pointer'>Sign In</div>
+                <Link to={'/login'} className='px-4 py-2 border text-blue-800 border-blue-800 rounded-3xl text-xl hover:bg-blue-50 cursor-pointer'>Sign In</Link>
             </div>
         </nav >
     )
