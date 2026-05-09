@@ -1,5 +1,6 @@
 import React from "react";
 import cover from "../../assets/medlink cover.png";
+import { Link } from 'react-router-dom'
 
 const LandingPage = () => {
     return (
@@ -26,10 +27,9 @@ const LandingPage = () => {
                 </p>
 
                 {/* join */}
-                <p className="mt-6 text-lg text-center md:text-left">
-                    New to MedLink?{" "}
+                <Link to={'/signUp'} className="mt-6 text-lg text-center block w-full">New to MedLink?{" "}
                     <span className="text-blue-800 cursor-pointer hover:underline">Join Now</span>
-                </p>
+                </Link>
             </div>
 
             {/* image on the right side */}
