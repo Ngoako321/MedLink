@@ -27,7 +27,7 @@ const Login = () => {
  <div className='mt-5 w-full hover:bg-blue-900 bg-blue-500 text-white py-3 px-4 rounded-xl text-center text-xl cursor-pointer my-2'>Login</div>
             </div>
 
-            <div className='mt-4 mb-14'> New to LinkedIn? <Link href='/signUp' className="text-blue-800 cursor-pointer">Sign In</Link></div>
+            <div className='mt-4 mb-14'> New to LinkedIn? <Link to='/signUp' className="text-blue-800 cursor-pointer">Sign Up</Link></div>
         </div>
     )
 }
