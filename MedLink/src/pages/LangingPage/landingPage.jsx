@@ -1,6 +1,7 @@
 import React from "react";
 import cover from "../../assets/medlink cover.png";
 import { Link } from 'react-router-dom'
+import GoogleLoginComp from "../../components/GoogleLogin/googleLoginComp";
 
 const LandingPage = () => {
     return (
@@ -9,14 +10,14 @@ const LandingPage = () => {
             {/*left side*/}
             <div className="md:w-[45%] w-full">
 
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-700 leading-tight"> Welcome to the Health Community</h1>
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-700 leading-tight text-center"> Welcome to the Health Community</h1>
 
                 {/* Buttons */}
                 <div className="mt-10 flex flex-col gap-4">
 
-                    <div className="py-3 bg-white rounded-3xl w-full text-black text-center cursor-pointer hover:bg-gray-50 shadow-sm"> Google Button</div>
+                    <div className="py-3 bg-white rounded-3xl w-full text-black text-center cursor-pointer hover:bg-gray-50 shadow-sm"><GoogleLoginComp/></div>
 
-                    <div className="py-3 bg-white rounded-3xl border-2 border-gray-300 text-center text-black hover:bg-gray-100 cursor-pointer"> Sign in with email</div>
+                    <Link to={'/login'} className="py-3 bg-white rounded-3xl border-2 border-gray-300 text-center text-black hover:bg-gray-100 cursor-pointer"> Sign in with email</Link>
                 </div>
 
                 {/* terms */}
