@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from '../../components/Card/card'
 import ProfileCard from '../../components/ProfileCard/profileCard'
 import maleUser from "../../assets/male user proile.png";
@@ -7,8 +7,15 @@ import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import ArticleIcon from '@mui/icons-material/Article';
 import Advertisement from '../../components/Advertisement/advertisement';
 import Post from '../../components/Post/post';
-
+import Modal from '../../components/Modal/modal';
+import AddModal from '../../components/AddModel/addModal';
 const Feeds = () => {
+
+  const [addPostModal, setAddPostModal] = useState(false);
+
+  const handleOpenPostModal = () => {
+    setAddPostModal(prev=>!prev)
+  }
   return (
     <div className='px-5 xl:px-50 py-9 flex gap-5 w-full mt-5 bg-gray-100'>
 
@@ -41,13 +48,13 @@ const Feeds = () => {
           <Card padding={1}>
             <div className='flex gap-2 items-center'>
               <img src={maleUser} className='rounded-4xl w-13 h-13 border-2 border-white cursor-pointer' />
-              <div className='w-full border-1 py-3 px-3 rounded-3xl cursor-pointer hover:bg-gray-100'> Start a post</div>
+              <div onClick={() => setAddPostModal(true)} className='w-full border-1 py-3 px-3 rounded-3xl cursor-pointer hover:bg-gray-100'> Start a post</div>
             </div>
 
             <div className='w-full flex mt-3'>
-              <div className='flex gap-2 cursor-pointer justify-center rounded-lg w-[33%] hover:bg-gray-100'><VideoCallIcon sx={{ color: "green" }} />Video</div>
-              <div className='flex gap-2 cursor-pointer justify-center rounded-lg w-[33%] hover:bg-gray-100'><InsertPhotoIcon sx={{ color: "red" }} />Photo</div>
-              <div className='flex gap-2 cursor-pointer justify-center rounded-lg w-[33%] hover:bg-gray-100'><ArticleIcon sx={{ color: "yellow" }} />Article</div>
+              <div onClick={() => setAddPostModal(true)} className='flex gap-2 cursor-pointer justify-center rounded-lg w-[33%] hover:bg-gray-100'><VideoCallIcon sx={{ color: "green" }} />Video</div>
+              <div onClick={() => setAddPostModal(true)} className='flex gap-2 cursor-pointer justify-center rounded-lg w-[33%] hover:bg-gray-100'><InsertPhotoIcon sx={{ color: "red" }} />Photo</div>
+              <div onClick={() => setAddPostModal(true)} className='flex gap-2 cursor-pointer justify-center rounded-lg w-[33%] hover:bg-gray-100'><ArticleIcon sx={{ color: "yellow" }} />Article</div>
 
             </div>
           </Card>
@@ -88,7 +95,12 @@ const Feeds = () => {
           <Advertisement />
         </div>
       </div>
+      {
+        addPostModal && <Modal closeModal={handleOpenPostModal} title={""}>
+          <AddModal />
 
+        </Modal>
+      }
     </div>
   )
 }
