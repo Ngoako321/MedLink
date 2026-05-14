@@ -6,6 +6,7 @@ import VideoCallIcon from '@mui/icons-material/VideoCall';
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import ArticleIcon from '@mui/icons-material/Article';
 import Advertisement from '../../components/Advertisement/advertisement';
+import Post from '../../components/Post/post';
 
 const Feeds = () => {
   return (
@@ -52,12 +53,16 @@ const Feeds = () => {
           </Card>
         </div>
 
-       
-        
+
+
         <div className='border-b-1 border-gray-400 w-[100%] my-5'>
         </div>
 
-        <div className='w-full flex flex-col gap-5'>Post</div>
+        <div className='w-full flex flex-col gap-5'>
+          <Post />
+
+          <Post />
+        </div>
       </div>
 
       { /*right side*/}
