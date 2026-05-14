@@ -72,16 +72,16 @@ const Navbar2 = () => {
                 </Link>
 
                 {/* Resume */}
-                <div className='hidden sm:flex flex-col items-center cursor-pointer text-gray-500 hover:text-black'>
+                <Link to={'/resume'} className='hidden sm:flex flex-col items-center cursor-pointer text-gray-500 hover:text-black'>
                     <WorkIcon sx={{color: location.pathname==='/resume'?"black":"gray"}} />
                     <div className= {`text-sm text-gray-500 ${location.pathname==='/resume'?"border-b-3 ":""}`}>Resume</div>
-                </div>
+                </Link>
 
                 {/* Messages */}
-                <div className='hidden sm:flex flex-col items-center cursor-pointer text-gray-500 hover:text-black'>
+                <Link to={'/messages'} className='hidden sm:flex flex-col items-center cursor-pointer text-gray-500 hover:text-black'>
                     <MessageIcon sx={{color: location.pathname==='/messages'?"black":"gray"}} />
                     <div className= {`text-sm text-gray-500 ${location.pathname==='/messages'?"border-b-3 ":""}`}>Messages</div>
-                </div>
+                </Link>
 
                 {/* Notifications */}
                 <div className='flex flex-col items-center cursor-pointer text-gray-500 hover:text-black'>
