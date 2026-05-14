@@ -7,6 +7,7 @@ import Login from './pages/Login/login'
 import SignUp from './pages/SignUp/signUp'
 import Navbar2 from './components/Navbar2/navbar2'
 import Feeds from './pages/Feeds/feeds'
+import MyNetwork from './pages/MyNetwork/myNetwork'
 
 function App() {
   const isLogin = true;
@@ -21,6 +22,7 @@ function App() {
         <Route path='/signUp' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
         <Route path='/feeds' element={<Feeds />} />
+        <Route path='/MyNetwork' element={<MyNetwork />} />
       </Routes>
 
       <Footer />

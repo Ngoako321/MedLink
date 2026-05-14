@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import medlinkLogo from "../../assets/mediLink.png";
 import maleUser from "../../assets/male user proile.png";
 import './navbar2.css';
-import { useLocation } from 'react-router-dom'
+import { useLocation,Link  } from 'react-router-dom'
 
 import HomeIcon from '@mui/icons-material/Home';
 import GroupIcon from '@mui/icons-material/Group';
@@ -60,39 +60,39 @@ const Navbar2 = () => {
             <div className='flex gap-3 sm:gap-5 md:gap-8 items-center'>
 
                 {/* Home */}
-                <div className='flex flex-col items-center cursor-pointer text-gray-500 hover:text-black'>
+                <Link to={'/feeds'} className='flex flex-col items-center cursor-pointer text-gray-500 hover:text-black'>
                     <HomeIcon sx={{color: location.pathname==='/feeds'?"black":"gray"}} />
-                    <span className='hidden md:block text-xs'>Home</span>
-                </div>
+                    <div className= {`text-sm text-gray-500 ${location.pathname==='/feeds'?"border-b-3 ":""}`}>Home</div>
+                </Link>
 
                 {/* Network */}
-                <div className='flex flex-col items-center cursor-pointer text-gray-500 hover:text-black'>
-                    <GroupIcon sx={{color: location.pathname==='/mynetwork'?"black":"gray"}} />
-                    <span className='hidden md:block text-xs'>Network</span>
-                </div>
+                <Link to={'/myNetwork'} className='flex flex-col items-center cursor-pointer text-gray-500 hover:text-black'>
+                    <GroupIcon sx={{color: location.pathname==='/myNetwork'?"black":"gray"}} />
+                    <div className= {`text-sm text-gray-500 ${location.pathname==='/myNetwork'?"border-b-3 ":""}`}>Network</div>
+                </Link>
 
                 {/* Resume */}
                 <div className='hidden sm:flex flex-col items-center cursor-pointer text-gray-500 hover:text-black'>
                     <WorkIcon sx={{color: location.pathname==='/resume'?"black":"gray"}} />
-                    <span className='hidden md:block text-xs'>Resume</span>
+                    <div className= {`text-sm text-gray-500 ${location.pathname==='/resume'?"border-b-3 ":""}`}>Resume</div>
                 </div>
 
                 {/* Messages */}
                 <div className='hidden sm:flex flex-col items-center cursor-pointer text-gray-500 hover:text-black'>
                     <MessageIcon sx={{color: location.pathname==='/messages'?"black":"gray"}} />
-                    <span className='hidden md:block text-xs'>Message</span>
+                    <div className= {`text-sm text-gray-500 ${location.pathname==='/messages'?"border-b-3 ":""}`}>Messages</div>
                 </div>
 
                 {/* Notifications */}
                 <div className='flex flex-col items-center cursor-pointer text-gray-500 hover:text-black'>
                     <div><NotificationsNoneIcon sx={{color: location.pathname==='/notifications'?"black":"gray"}}/><span className='p-1 rounded-full text-sm bg-red-700 text-white'>1</span></div>
-                    <span className='hidden md:block text-xs'>Notifications</span>
+                    <div className= {`text-sm text-gray-500 ${location.pathname==='/notifications'?"border-b-3 ":""}`}>Notifications</div>
                 </div>
 
                 {/* Profile */}
                 <div className='flex flex-col items-center cursor-pointer'>
                     <img className='w-6 h-6 md:w-8 md:h-8 rounded-full' src={maleUser} alt='MaleUser' />
-                    <span className='hidden md:block text-xs text-gray-500'>Me</span>
+                    <div className= {`text-sm text-gray-500 ${location.pathname==='/me'?"border-b-3 ":""}`}>Me</div>
                 </div>
             </div>
         </div>
