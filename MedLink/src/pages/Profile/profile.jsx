@@ -12,9 +12,12 @@ import AboutModal from '../../components/AboutModal/aboutModal';
 import ExpModal from '../../components/ExpModal/expModal';
 import MessageModal from '../../components/MessageModal/messageModal';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Profile = () => {
 
+    const {id} = useParams();
     const [imageSetModal, setImageModal] = useState(false);
     const [circularImage, setCircularImage] = useState(true);
 
@@ -141,7 +144,7 @@ const Profile = () => {
                                 </div>
                             </div>
                             <div className='w-full flex justify-center'>
-                                <div className='p-2 rounded-xl cursor-pointer hover:bg-gray-300'>Show all Posts <ArrowRightAltIcon/></div>
+                                <Link to={`/profile/${id}/activities`} className='p-2 rounded-xl cursor-pointer hover:bg-gray-300'>Show all Posts <ArrowRightAltIcon/></Link>
                             </div>
                         </Card>
                     </div>
