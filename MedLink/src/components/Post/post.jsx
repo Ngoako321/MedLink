@@ -7,7 +7,7 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 import SendIcon from '@mui/icons-material/Send';
 
-const Post = () => {
+const Post = ({ profile }) => {
     const [seeMore, setSeeMore] = useState(false);
     const [comment, setComment] = useState(false)
     const handleSendComment = (e) => {
@@ -45,11 +45,12 @@ const Post = () => {
                     </div>
                 </div>
 
-                <div className='flex p-1'>
+                {!profile && <div className='flex p-1'>
                     <div className='w-[33%] justify-center flex gap-2 items-center border-r-1 border-gray-100 p-2 cursor-pointer hover:bg-gray-100'><ThumbUpIcon sx={{ fontSize: 22, color: 'blue' }} />  <span>Like</span></div>
-                    <div onClick={()=>setComment(true)} className='w-[33%] justify-center flex gap-2 items-center border-r-1 border-gray-100 p-2 cursor-pointer hover:bg-gray-100'><CommentOutlinedIcon sx={{ fontSize: 22, color: 'black' }} />  <span>Comment</span></div>
+                    <div onClick={() => setComment(true)} className='w-[33%] justify-center flex gap-2 items-center border-r-1 border-gray-100 p-2 cursor-pointer hover:bg-gray-100'><CommentOutlinedIcon sx={{ fontSize: 22, color: 'black' }} />  <span>Comment</span></div>
                     <div className='w-[33%] justify-center flex gap-2 items-center border-r-1 border-gray-100 p-2 cursor-pointer hover:bg-gray-100'><SendIcon sx={{ fontSize: 22, color: 'black' }} />  <span>Share</span></div>
                 </div>
+                }
 
                 {/* Comment Section */}
                 {
