@@ -24,10 +24,10 @@ const Navbar2 = () => {
             <div className='flex gap-2 items-center'>
 
                 {/* Logo */}
-                <div>
+                <Link to='/feeds'>
                     <img src={medlinkLogo} alt="MedLinkLogo" className='w-8 h-8 md:w-10 md:h-10'
                     />
-                </div>
+                </Link>
 
                 {/* Search */}
                 <div className='relative'>
@@ -90,10 +90,10 @@ const Navbar2 = () => {
                 </div>
 
                 {/* Profile */}
-                <div className='flex flex-col items-center cursor-pointer'>
+                <Link to={'profile/vation'} className='flex flex-col items-center cursor-pointer'>
                     <img className='w-6 h-6 md:w-8 md:h-8 rounded-full' src={maleUser} alt='MaleUser' />
                     <div className= {`text-sm text-gray-500 ${location.pathname==='/me'?"border-b-3 ":""}`}>Me</div>
-                </div>
+                </Link>
             </div>
         </div>
 

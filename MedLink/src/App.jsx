@@ -10,6 +10,7 @@ import Feeds from './pages/Feeds/feeds'
 import MyNetwork from './pages/MyNetwork/myNetwork'
 import Resume from './pages/Resume/resume'
 import Messages from './pages/Messages/messages'
+import Profile from './pages/Profile/profile'
 function App() {
   const isLogin = true;
 
@@ -26,8 +27,9 @@ function App() {
         <Route path='/MyNetwork' element={<MyNetwork />} />
         <Route path='/resume' element={<Resume />} />
         <Route path='/messages' element={<Messages/>} />
-      </Routes>
+        <Route path='/profile/:id' element={<Profile/>} />
 
+      </Routes>
       <Footer />
     </div>
   )
