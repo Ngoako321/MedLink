@@ -12,7 +12,7 @@ const EditinfoModal = () => {
             <div className='w-full mb-4'>
                 <label>Headline*</label>
                 <br />
-                <textarea className='p-2 mt-1 w-full border-1 rounded-md' cols={10}></textarea>
+                <textarea className='p-2 mt-1 w-full border-1 rounded-md' cols={10} rows={3}></textarea>
             </div>
 
             <div className='w-full mb-4'>

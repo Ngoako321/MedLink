@@ -8,6 +8,10 @@ import AddIcon from '@mui/icons-material/Add';
 import Modal from '../../components/Modal/modal';
 import ImageModal from '../../components/Conversation/ImageModal/imageModal';
 import EditinfoModal from '../../components/EditInfoModal/editinfoModal';
+import AboutModal from '../../components/AboutModal/aboutModal';
+import ExpModal from '../../components/ExpModal/expModal';
+import MessageModal from '../../components/MessageModal/messageModal';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 const Profile = () => {
 
@@ -15,9 +19,24 @@ const Profile = () => {
     const [circularImage, setCircularImage] = useState(true);
 
     const [infoModal, setInfoModal] = useState(false);
+    const [aboutModal, setAboutModal] = useState(false);
+    const [expModal, setExpModal] = useState(false);
+    const [messageModal, setmessageModal] = useState(false);
+
+    const handleMessageModal = () => {
+        setmessageModal(prev => !prev)
+    }
+
+    const handleExpModal = () => {
+        setExpModal(prev => !prev)
+    }
+
+    const handleAboutModal = () => {
+        setAboutModal(prev => !prev)
+    }
 
     const handleInfoModal = () => {
-        setInfoModal(prev=>!prev)
+        setInfoModal(prev => !prev)
     }
 
     const handleImageModalOpenClose = () => {
@@ -65,7 +84,7 @@ const Profile = () => {
                                             <div className='cursor-pointer p-2 border-1 rounded-lg bg-blue-800 text-white font-semibold'>Log Out</div>
                                         </div>
                                         <div className='my-5 flex gap-5'>
-                                            <div className='cursor-pointer p-2 border-1 rounded-lg bg-blue-800 text-white font-semibold'>Message</div>
+                                            <div onClick={handleMessageModal} className='cursor-pointer p-2 border-1 rounded-lg bg-blue-800 text-white font-semibold'>Message</div>
                                             <div className='cursor-pointer p-2 border-1 rounded-lg bg-blue-800 text-white font-semibold'>Connect</div>
 
                                         </div>
@@ -79,7 +98,7 @@ const Profile = () => {
                         <Card padding={1}>
                             <div className='flex justify-between items-center'>
                                 <div className='text-xl'>About</div>
-                                <div className='cursor-pointer'><EditIcon /></div>
+                                <div onClick={handleAboutModal} className='cursor-pointer'><EditIcon /></div>
                             </div>
                             <div className='text-gray-700 text-md w-[80%]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum pariatur aperiam voluptatem illo sequi quidem ipsum rem amet iure illum ab, reiciendis corrupti natus, numquam placeat quod velit hic libero!</div>
                         </Card>
@@ -121,6 +140,9 @@ const Profile = () => {
                                     <Post profile={1} />
                                 </div>
                             </div>
+                            <div className='w-full flex justify-center'>
+                                <div className='p-2 rounded-xl cursor-pointer hover:bg-gray-300'>Show all Posts <ArrowRightAltIcon/></div>
+                            </div>
                         </Card>
                     </div>
 
@@ -129,7 +151,7 @@ const Profile = () => {
                         <Card padding={1}>
                             <div className='flex justify-between items-center'>
                                 <div className='text-xl'>Experience</div>
-                                <div className='cursor-pointer'><AddIcon /></div>
+                                <div onClick={handleExpModal} className='cursor-pointer'><AddIcon /></div>
                             </div>
 
                             <div className='mt-5'>
@@ -179,9 +201,29 @@ const Profile = () => {
 
             {
                 infoModal && <Modal title='Edit Info' closeModal={handleInfoModal}>
-                    <EditinfoModal/>
+                    <EditinfoModal />
                 </Modal>
             }
+
+            {
+                aboutModal && <Modal title="Edit About" closeModal={handleAboutModal}>
+                    <AboutModal />
+                </Modal>
+            }
+
+            {
+                expModal && <Modal title="Experience" closeModal={handleExpModal}>
+                    <ExpModal />
+                </Modal>
+            }
+
+            {
+                messageModal && <Modal title='Send Message' closeModal={handleMessageModal}>
+                    <MessageModal />
+
+                </Modal>
+            }
+
         </div>
     )
 }
