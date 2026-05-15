@@ -1,16 +1,10 @@
 import React from 'react'
 import ProfileCard from '../../components/ProfileCard/profileCard'
-import Advertisement from '../../components/Advertisement/advertisement'
-import { useParams } from 'react-router-dom'
+import Card from '@mui/material/Card'
 import Post from '../../components/Post/post'
-import Card from '../../components/Card/card'
+import Advertisement from '../../components/Advertisement/advertisement'
 
-const AllActivities = () => {
-
-    const { id } = useParams()
-
-    console.log(id)
-
+const SingleActivity = () => {
     return (
         <div className='px-5 xl:px-50 py-9 flex gap-5 w-full mt-5 bg-gray-100'>
 
@@ -25,19 +19,9 @@ const AllActivities = () => {
             <div className='w-full sm:w-[50%] py-5'>
 
                 <Card padding={1}>
-
-                    <div className='text-xl font-semibold'>All Activity</div>
-
-                    <div className='cursor-pointer w-fit p-2 border rounded-3xl bg-green-800 my-2 text-white font-semibold'>
-                        Post
-                    </div>
-
-                    <div className='my-2 flex flex-col gap-3'>
-                        <Post />
-                        <Post />
+                    <div>
                         <Post />
                     </div>
-
                 </Card>
 
             </div>
@@ -53,4 +37,4 @@ const AllActivities = () => {
     )
 }
 
-export default AllActivities
+export default SingleActivity

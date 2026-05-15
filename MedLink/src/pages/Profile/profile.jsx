@@ -131,17 +131,18 @@ const Profile = () => {
                             {/* parent div for scrollable activities */}
                             <div className='overflow-x-auto my-2 flex gap-1 overflow-y-hidden w-full'>
 
-                                <div className='cursor-pointer shrink-0 w-[350px]'>
+                                <Link to={`/profile/${id}/activities/111`} className='cursor-pointer shrink-0 w-[350px]'>
                                     <Post profile={1} />
-                                </div>
+                                </Link>
 
-                                <div className='cursor-pointer shrink-0 w-[350px]'>
+                                <Link to={`/profile/${id}/activities/112`} className='cursor-pointer shrink-0 w-[350px]'>
                                     <Post profile={1} />
-                                </div>
+                                </Link>
 
-                                <div className='cursor-pointer shrink-0 w-[350px]'>
+                                <Link to={`/profile/${id}/activities/113`} className='cursor-pointer shrink-0 w-[350px]'>
                                     <Post profile={1} />
-                                </div>
+                                </Link>
+
                             </div>
                             <div className='w-full flex justify-center'>
                                 <Link to={`/profile/${id}/activities`} className='p-2 rounded-xl cursor-pointer hover:bg-gray-300'>Show all Posts <ArrowRightAltIcon/></Link>
