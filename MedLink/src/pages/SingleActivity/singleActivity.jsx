@@ -17,13 +17,9 @@ const SingleActivity = () => {
 
             {/* Middle side */}
             <div className='w-full sm:w-[50%] py-5'>
-
-                <Card padding={1}>
                     <div>
                         <Post />
                     </div>
-                </Card>
-
             </div>
 
             {/* Right side */}
